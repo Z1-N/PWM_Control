@@ -1,20 +1,10 @@
-18:40:16 **** Incremental Build of configuration Debug for project PWM_Control ****
+21:18:24 **** Incremental Build of configuration Debug for project PWM_Control ****
 make -j8 all 
-arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
-../Core/Src/main.c:105:8: warning: 'HAL_TIM_IC_CaptureCallback' defined but not used [-Wunused-function]
-  105 |   void HAL_TIM_IC_CaptureCallback(TIM_HandleTypeDef *htim)
-      |        ^~~~~~~~~~~~~~~~~~~~~~~~~~
-arm-none-eabi-gcc -o "PWM_Control.elf" @"objects.list"   -mcpu=cortex-m3 -T"/home/cypher/Desktop/Deeptech/PWM_Control/PWM_Control/STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="PWM_Control.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: PWM_Control.elf
- 
 arm-none-eabi-size  PWM_Control.elf 
-arm-none-eabi-objdump -h -S PWM_Control.elf  > "PWM_Control.list"
    text	   data	    bss	    dec	    hex	filename
-   9536	     12	   1716	  11264	   2c00	PWM_Control.elf
+   8400	     12	   1716	  10128	   2790	PWM_Control.elf
 Finished building: default.size.stdout
  
-Finished building: PWM_Control.list
- 
 
-18:40:17 Build Finished. 0 errors, 1 warnings. (took 394ms)
+21:18:24 Build Finished. 0 errors, 0 warnings. (took 133ms)
 
