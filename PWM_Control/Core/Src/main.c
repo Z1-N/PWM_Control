@@ -111,6 +111,11 @@ int main(void)
       {
     	  //record the start time
         start_time = __HAL_TIM_GET_COUNTER(&htim4);
+
+           period = current_time - rising_edge_start_time;
+      
+          // Update the start time for the next period measurement 
+           rising_edge_start_time = current_time;
       }
       // else falling edge
       else
@@ -133,8 +138,9 @@ int main(void)
   {
 	  if (is_data_ready)
 	      {
-	      // do stuff
-	        is_data_ready = 0;
+	      float duty_cycle = ((float)pulse_width / (float)period) * 100.0f
+
+	      is_data_ready = 0;
 	      }
   }
     /* USER CODE END WHILE */
