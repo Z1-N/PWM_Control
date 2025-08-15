@@ -47,6 +47,8 @@ TIM_HandleTypeDef htim2;
 
 volatile uint32_t period_value = 0;
 volatile uint32_t pulse_width_value = 0;
+float frequncy_hz;
+int DutyCycle;
 
 /* USER CODE END PV */
 
@@ -109,7 +111,7 @@ int main(void)
 
       period_value = HAL_TIM_ReadCapturedValue(htim, TIM_CHANNEL_1);
 
-      pulse_width_value = HAL_TIM_ReadCapturedValue(htim, TIM_CHANNEL_2);
+      pulse_width_value = HAL_TIM_ReadCapturedValue(htim, TIM_CHANNEL_2); //on-time
 
     }
   }
@@ -120,6 +122,10 @@ int main(void)
 
   while (1)
   {
+    float period_us = (float)(period_value + 1) / 72.0f;
+    frequncy_hz = 100000f./period_us;
+    DutyCycle = (pulse_width_value/period_value)*100
+    
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
